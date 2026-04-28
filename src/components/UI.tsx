@@ -108,20 +108,16 @@ export const Select: React.FC<SelectProps> = ({ label, error, options, ...props 
 interface CardProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-export const Card: React.FC<CardProps> = ({ children, className = '' }) => {
+export const Card: React.FC<CardProps> = ({ children, className = '', onClick }) => {
   return (
-    <div className={`bg-ivory border border-warm-sand rounded-lg p-6 shadow-level-1 ${className}`}>
+    <div className={`bg-ivory border border-warm-sand rounded-lg p-6 shadow-level-1 ${className}`} onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
       {children}
     </div>
   );
 };
-
-interface Badge {
-  status: 'pending' | 'progress' | 'review' | 'completed' | 'cancelled' | 'accepted' | 'rejected' | 'approved';
-  text: string;
-}
 
 const statusColors: Record<string, { bg: string; text: string }> = {
   pending: { bg: 'bg-warm-sand', text: 'text-near-black' },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, StatusBadge, TextArea } from '../components/UI';
-import { getTask, Task, reviewSubmission } from '../lib/storage';
+import { getTask, type Task, reviewSubmission } from '../lib/storage';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export const TaskDetailPage: React.FC = () => {

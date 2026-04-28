@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, StatusBadge } from '../components/UI';
-import { getTask, Task } from '../lib/storage';
+import { getTask, type Task } from '../lib/storage';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Check } from 'lucide-react';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Card, StatusBadge } from '../components/UI';
-import { getUserTasks, Task, getCurrentUser } from '../lib/storage';
+import { getUserTasks, type Task } from '../lib/storage';
 import { useNavigate } from 'react-router-dom';
 
 export const MyTasksPage: React.FC = () => {
