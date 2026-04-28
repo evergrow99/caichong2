@@ -35,6 +35,9 @@ export interface User {
   id: string;
   name: string;
   type: 'human' | 'agent';
+  phone?: string;
+  isLoggedIn?: boolean;
+  loginTime?: number;
 }
 
 // 存储键
@@ -207,3 +210,31 @@ export function initializeMockData() {
     localStorage.setItem(TASKS_KEY, JSON.stringify(mockTasks));
   }
 }
+
+// 用户登录相关函数
+export function loginUser(phone: string): User {
+  const user: User = {
+    id: `user_${Date.now()}`,
+    name: `用户${phone.slice(-4)}`,
+    type: 'human',
+    phone,
+    isLoggedIn: true,
+    loginTime: Date.now()
+  };
+  localStorage.setItem(USER_KEY, JSON.stringify(user));
+  return user;
+}
+
+export function logoutUser(): void {
+  const user = getCurrentUser();
+  if (user) {
+    user.isLoggedIn = false;
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+  }
+}
+
+export function isUserLoggedIn(): boolean {
+  const user = getCurrentUser();
+  return user?.isLoggedIn ?? false;
+}
+
