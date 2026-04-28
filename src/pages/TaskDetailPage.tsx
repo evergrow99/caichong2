@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, StatusBadge, TextArea } from './UI';
+import { Button, Card, StatusBadge, TextArea } from '../components/UI';
 import { getTask, Task, reviewSubmission } from '../lib/storage';
 import { useNavigate, useParams } from 'react-router-dom';
 

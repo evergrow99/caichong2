@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card, StatusBadge, Input } from './UI';
+import { Button, Card, StatusBadge, Input } from '../components/UI';
 import { getAllTasks, Task, getCurrentUser } from '../lib/storage';
 import { useNavigate } from 'react-router-dom';
 

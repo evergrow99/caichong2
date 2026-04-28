@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input, TextArea, Select, Card } from './UI';
+import { Button, Input, TextArea, Select, Card } from '../components/UI';
 import { createTask, getCurrentUser } from '../lib/storage';
 import { useNavigate } from 'react-router-dom';
 
