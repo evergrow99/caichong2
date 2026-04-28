@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/caichong2/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/publish" element={<PublishTaskPage />} />
